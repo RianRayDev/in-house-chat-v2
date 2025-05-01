@@ -1,0 +1,46 @@
+For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+
+By default, this template supports JSX syntax with Tailwind CSS classes, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+
+Use icons from lucide-react for logos.
+
+# Function Calling Capabilities
+
+The AI models in this application have real function calling capabilities. These are not simulations but actual functions that the AI can use to perform tasks:
+
+1. Web Search: The models can perform real web searches using the `web_search` function, retrieving actual information from the internet.
+
+2. Future Functions: The application is designed to support additional functions beyond web search. These can be implemented by defining the function schema and handling the function calls appropriately.
+
+## Implementation Details
+
+When implementing function calling:
+- Define the function schema with proper parameters and descriptions
+- Use the `strict: true` parameter for more reliable function calling
+- Properly handle the function call response in both streaming and non-streaming modes
+- Ensure the UI correctly displays the function call results
+
+## Web Search Implementation
+
+The web search functionality works as follows:
+1. The AI model detects when a search is needed and calls the `web_search` function
+2. The function call is displayed in the chat as a code block showing the JSON parameters
+3. The application performs the search and returns the results
+4. The search results are displayed as a separate message in the chat with special styling
+5. The AI then analyzes the search results and generates a response
+6. The AI's response is displayed as another separate message
+
+This implementation ensures that:
+- Users can see the exact function call being made (transparency)
+- Users can see both the search results and the AI's analysis
+- The search results are clearly distinguished from the AI's response
+- The conversation flow remains natural and easy to follow
+
+The web search function is defined with the following parameters:
+- `query`: The search query string
+- `results_limit`: The maximum number of search results to return
+- `search_engine`: The search engine to use (Google, Bing, or Yahoo)
+
+The function is configured with `strict: true` to ensure the model follows the parameter schema exactly.
+
+The function calling mechanism allows the AI to extend its capabilities beyond its training data, providing real-time information and performing actions that would otherwise be impossible.

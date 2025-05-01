@@ -1,0 +1,157 @@
+/* Markdown streaming styles */
+.markdown-streaming {
+  font-family: inherit;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: #4b5563;
+}
+
+.dark .markdown-streaming {
+  color: #9ca3af;
+}
+
+/* Special handling for streaming text */
+.markdown-streaming span {
+  display: inline;
+}
+
+/* Process markdown in streaming text */
+.markdown-streaming {
+  font-size: 1rem;
+}
+
+/* Heading styles */
+.markdown-streaming span:first-child {
+  display: inline;
+}
+
+/* H1 style */
+.markdown-streaming span:first-child:has(+ span:contains("#")) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #374151;
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+  padding-bottom: 0.25rem;
+}
+
+.dark .markdown-streaming span:first-child:has(+ span:contains("#")) {
+  color: #d1d5db;
+  border-bottom-color: rgba(55, 65, 81, 0.5);
+}
+
+/* H2 style */
+.markdown-streaming span:contains("##") {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #374151;
+  display: block;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .markdown-streaming span:contains("##") {
+  color: #d1d5db;
+}
+
+/* H3 style */
+.markdown-streaming span:contains("###") {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #374151;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .markdown-streaming span:contains("###") {
+  color: #d1d5db;
+}
+
+/* Bold style */
+.markdown-streaming span:contains("**") {
+  font-weight: 600;
+  color: #374151;
+}
+
+.dark .markdown-streaming span:contains("**") {
+  color: #d1d5db;
+}
+
+/* Italic style */
+.markdown-streaming span:contains("*") {
+  font-style: italic;
+}
+
+/* List item style */
+.markdown-streaming span:contains("- ") {
+  display: block;
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.markdown-streaming span:contains("- ")::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+}
+
+/* Ordered list item style */
+.markdown-streaming span:contains("1. "),
+.markdown-streaming span:contains("2. "),
+.markdown-streaming span:contains("3. ") {
+  display: block;
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+/* Blockquote style */
+.markdown-streaming span:contains("> ") {
+  display: block;
+  padding-left: 1rem;
+  border-left: 4px solid #e5e7eb;
+  font-style: italic;
+  color: #6b7280;
+  margin: 0.75rem 0;
+}
+
+.dark .markdown-streaming span:contains("> ") {
+  border-left-color: #374151;
+  color: #9ca3af;
+}
+
+/* Code style */
+.markdown-streaming span:contains("`") {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  background-color: rgba(243, 244, 246, 0.8);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: #4b5563;
+}
+
+.dark .markdown-streaming span:contains("`") {
+  background-color: rgba(31, 41, 55, 0.6);
+  color: #9ca3af;
+}
+
+/* Code block style */
+.markdown-streaming span:contains("```") {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  background-color: rgba(243, 244, 246, 0.8);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  color: #4b5563;
+  white-space: pre;
+}
+
+.dark .markdown-streaming span:contains("```") {
+  background-color: rgba(31, 41, 55, 0.6);
+  color: #9ca3af;
+}
